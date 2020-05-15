@@ -1,6 +1,6 @@
 {
   "name": "prettier",
-  "version": "1.19.1",
+  "version": "1.19.2",
   "description": "Prettier(x) is an opinionated code formatter",
   "main": "./index.js",
   "author": "James Long",
@@ -8,13 +8,13 @@
     "prettier": "./bin/prettier.js"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "scripts": {
     "test": "echo no test"
   },
   "dependencies": {
-    "prettierx": "~0.11.0"
+    "prettierx": "~0.12.0"
   },
   "homepage": "https://github.com/brodybits/prettierx",
   "repository": "amarcruz/prettier",
