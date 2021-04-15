@@ -16,6 +16,21 @@ yarn add aMarCruz/prettier -D
 npm i aMarCruz/prettier -D
 ```
 
+## Schema
+
+If you want to include support for the additional PrettieX options, add the following to the `json.schema` property in your VS Code settings:
+
+```json
+{
+  "json.schemas": [
+    {
+      "fileMatch": [".prettierrc", ".prettierrc.json"],
+      "url": "https://cdn.jsdelivr.net/gh/aMarCruz/prettier/schema.json"
+    }
+  ],
+}
+```
+
 ## License
 
 The MIT license.

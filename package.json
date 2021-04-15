@@ -11,12 +11,17 @@
     "node": ">=10.13.0"
   },
   "scripts": {
+    "build:schema": "node ./scripts/merge-schema.js",
     "test": "echo no test"
-  },
-  "dependencies": {
-    "prettierx": "~0.18.0"
   },
   "homepage": "https://github.com/brodybits/prettierx",
   "repository": "git+https://github.com/aMarCruz/prettier.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prettierx": "~0.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "~14.14.39",
+    "@types/prettier": "~2.2.3"
+  }
 }

@@ -2,6 +2,10 @@
 
 ## \[2.2.2] - 2021-04-15
 
+### Added
+
+- Schema for Prettier + PrettierX
+
 ### Changed
 
 - Updated Prettierx to 0.18.0, merged with Prettier 2.0.5 (2.2.0 & 2.2.1 was wrong)

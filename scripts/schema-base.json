@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for .prettierrc (PrettierX)",
+  "definitions": {
+    "optionsDefinition": {
+      "type": "object",
+      "properties": {}
+    },
+    "overridesDefinition": {
+      "type": "object",
+      "properties": {
+        "overrides": {
+          "type": "array",
+          "description": "Provide a list of patterns to override prettier configuration.",
+          "items": {
+            "type": "object",
+            "required": ["files"],
+            "properties": {
+              "files": {
+                "description": "Include these files in this override.",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "array", "items": { "type": "string" } }
+                ]
+              },
+              "excludeFiles": {
+                "description": "Exclude these files from this override.",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "array", "items": { "type": "string" } }
+                ]
+              },
+              "options": {
+                "type": "object",
+                "description": "The options to apply for this override.",
+                "$ref": "#/definitions/optionsDefinition"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/optionsDefinition" },
+        { "$ref": "#/definitions/overridesDefinition" }
+      ]
+    },
+    { "type": "string" }
+  ]
+}
