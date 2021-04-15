@@ -1,6 +1,6 @@
 {
   "name": "prettier",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Prettier(x) is an opinionated code formatter",
   "main": "./index.js",
   "author": "James Long",
@@ -14,7 +14,7 @@
     "test": "echo no test"
   },
   "dependencies": {
-    "prettierx": "~0.17.0"
+    "prettierx": "~0.18.0"
   },
   "homepage": "https://github.com/brodybits/prettierx",
   "repository": "git+https://github.com/aMarCruz/prettier.git",

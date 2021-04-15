@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-/* eslint-disable */
 // @ts-nocheck
+
 "use strict";
 
 var prettier

@@ -1,5 +1,11 @@
 # Changes to Custom Prettier
 
+## \[2.2.2] - 2021-04-15
+
+### Changed
+
+- Updated Prettierx to 0.18.0, merged with Prettier 2.0.5 (2.2.0 & 2.2.1 was wrong)
+
 ## \[2.2.1] - 2021-02-07
 
 ### Changed
