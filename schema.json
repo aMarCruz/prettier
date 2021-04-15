@@ -1,0 +1,374 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for .prettierrc (PrettierX)",
+  "definitions": {
+    "optionsDefinition": {
+      "type": "object",
+      "properties": {
+        "alignObjectProperties": {
+          "description": "Align colons in multiline object literals.",
+          "default": false,
+          "type": "boolean"
+        },
+        "arrayBracketSpacing": {
+          "description": "Put spaces between array brackets (similar to the corresponding eslint option). Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "arrowParens": {
+          "description": "Include parentheses around a sole arrow function parameter.",
+          "default": "always",
+          "oneOf": [
+            {
+              "enum": ["always"],
+              "description": "Always include parens. Example: `(x) => x`"
+            },
+            {
+              "enum": ["avoid"],
+              "description": "Omit parens when possible. Example: `x => x`"
+            }
+          ]
+        },
+        "breakBeforeElse": {
+          "description": "Always add a line break before else.",
+          "default": false,
+          "type": "boolean"
+        },
+        "breakLongMethodChains": {
+          "description": "Break method chains with more than 3 method calls, like Prettier 1.x.",
+          "default": false,
+          "type": "boolean"
+        },
+        "computedPropertySpacing": {
+          "description": "Put spaces between computed property brackets (similar to the corresponding eslint option). Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "cssParenSpacing": {
+          "description": "Print spaces between parens in CSS, WordPress style. Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "cursorOffset": {
+          "description": "Print (to stderr) where a cursor at the given position would move to after formatting.\nThis option cannot be used with --range-start and --range-end.",
+          "default": -1,
+          "type": "integer"
+        },
+        "endOfLine": {
+          "description": "Which end of line characters to apply.",
+          "default": "lf",
+          "oneOf": [
+            {
+              "enum": ["lf"],
+              "description": "Line Feed only (\\n), common on Linux and macOS as well as inside git repos"
+            },
+            {
+              "enum": ["crlf"],
+              "description": "Carriage Return + Line Feed characters (\\r\\n), common on Windows"
+            },
+            {
+              "enum": ["cr"],
+              "description": "Carriage Return character only (\\r), used very rarely"
+            },
+            {
+              "enum": ["auto"],
+              "description": "Maintain existing\n(mixed values within one file are normalised by looking at what's used after the first line)"
+            }
+          ]
+        },
+        "exportCurlySpacing": {
+          "description": "Put spaces between export curly braces.",
+          "default": true,
+          "type": "boolean"
+        },
+        "filepath": {
+          "description": "Specify the input filepath. This will be used to do parser inference.",
+          "type": "string"
+        },
+        "generatorStarSpacing": {
+          "description": "Put spaces around the star (`*`) in generator functions (before and after - similar to the corresponding eslint option). (Default is after only.)",
+          "default": false,
+          "type": "boolean"
+        },
+        "graphqlCurlySpacing": {
+          "description": "Put spaces between curly braces for GraphQL.",
+          "default": true,
+          "type": "boolean"
+        },
+        "htmlVoidTags": {
+          "description": "Format void HTML elements as void tags.",
+          "default": false,
+          "type": "boolean"
+        },
+        "htmlWhitespaceSensitivity": {
+          "description": "How to handle whitespaces in HTML.",
+          "default": "css",
+          "oneOf": [
+            {
+              "enum": ["css"],
+              "description": "Respect the default value of CSS display property."
+            },
+            { "enum": ["strict"], "description": "Whitespaces are considered sensitive." },
+            { "enum": ["ignore"], "description": "Whitespaces are considered insensitive." }
+          ]
+        },
+        "importCurlySpacing": {
+          "description": "Put spaces between import curly braces.",
+          "default": true,
+          "type": "boolean"
+        },
+        "importFormatting": {
+          "description": "Formatting of import statements, may be `oneline` to avoid conflict with VSCode \"Organize Imports\" feature.",
+          "default": "auto",
+          "oneOf": [
+            { "enum": ["auto"], "description": "automatic formatting, like Prettier" },
+            { "enum": ["oneline"], "description": "keep import statements on one line" }
+          ]
+        },
+        "indentChains": {
+          "description": "Put indents at the start of chained calls.",
+          "default": true,
+          "type": "boolean"
+        },
+        "insertPragma": {
+          "description": "Insert @format pragma into file's first docblock comment.",
+          "default": false,
+          "type": "boolean"
+        },
+        "jsxBracketSameLine": {
+          "description": "Put > on the last line instead of at a new line.",
+          "default": false,
+          "type": "boolean"
+        },
+        "jsxSingleQuote": {
+          "description": "Use single quotes in JSX.",
+          "default": false,
+          "type": "boolean"
+        },
+        "objectCurlySpacing": {
+          "description": "Put spaces between object curly braces (similar to the corresponding eslint option).",
+          "default": true,
+          "type": "boolean"
+        },
+        "offsetTernaryExpressions": {
+          "description": "Indent and align ternary expression branches more consistently with \"Standard JS\" (similar to the corresponding eslint option).",
+          "default": false,
+          "type": "boolean"
+        },
+        "parser": {
+          "description": "Which parser to use.",
+          "oneOf": [
+            { "enum": ["flow"], "description": "Flow" },
+            { "enum": ["babel"], "description": "JavaScript" },
+            { "enum": ["babel-flow"], "description": "Flow" },
+            { "enum": ["babel-ts"], "description": "TypeScript" },
+            { "enum": ["typescript"], "description": "TypeScript" },
+            { "enum": ["css"], "description": "CSS" },
+            { "enum": ["less"], "description": "Less" },
+            { "enum": ["scss"], "description": "SCSS" },
+            { "enum": ["json"], "description": "JSON" },
+            { "enum": ["json5"], "description": "JSON5" },
+            { "enum": ["json-stringify"], "description": "JSON.stringify" },
+            { "enum": ["graphql"], "description": "GraphQL" },
+            { "enum": ["markdown"], "description": "Markdown" },
+            { "enum": ["mdx"], "description": "MDX" },
+            { "enum": ["vue"], "description": "Vue" },
+            { "enum": ["yaml"], "description": "YAML" },
+            { "enum": ["glimmer"], "description": "Handlebars" },
+            { "enum": ["html"], "description": "HTML" },
+            { "enum": ["angular"], "description": "Angular" },
+            { "enum": ["lwc"], "description": "Lightning Web Components" }
+          ]
+        },
+        "pluginSearchDirs": {
+          "description": "Custom directory that contains prettier plugins in node_modules subdirectory.\nOverrides default behavior when plugins are searched relatively to the location of Prettier.\nMultiple values are accepted.",
+          "default": [],
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "plugins": {
+          "description": "Add a plugin. Multiple plugins can be passed as separate `--plugin`s.",
+          "default": [],
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "printWidth": {
+          "description": "The line length where Prettier will try wrap.",
+          "default": 80,
+          "type": "integer"
+        },
+        "proseWrap": {
+          "description": "How to wrap prose.",
+          "default": "preserve",
+          "oneOf": [
+            {
+              "enum": ["always"],
+              "description": "Wrap prose if it exceeds the print width."
+            },
+            { "enum": ["never"], "description": "Do not wrap prose." },
+            { "enum": ["preserve"], "description": "Wrap prose as-is." }
+          ]
+        },
+        "quoteProps": {
+          "description": "Change when properties in objects are quoted.",
+          "default": "as-needed",
+          "oneOf": [
+            {
+              "enum": ["as-needed"],
+              "description": "Only add quotes around object properties where required."
+            },
+            {
+              "enum": ["consistent"],
+              "description": "If at least one property in an object requires quotes, quote all properties."
+            },
+            {
+              "enum": ["preserve"],
+              "description": "Respect the input use of quotes in object properties."
+            }
+          ]
+        },
+        "rangeEnd": {
+          "description": "Format code ending at a given character offset (exclusive).\nThe range will extend forwards to the end of the selected statement.\nThis option cannot be used with --cursor-offset.",
+          "default": null,
+          "type": "integer"
+        },
+        "rangeStart": {
+          "description": "Format code starting at a given character offset.\nThe range will extend backwards to the start of the first line containing the selected statement.\nThis option cannot be used with --cursor-offset.",
+          "default": 0,
+          "type": "integer"
+        },
+        "requirePragma": {
+          "description": "Require either '@prettier' or '@format' to be present in the file's first docblock comment\nin order for it to be formatted.",
+          "default": false,
+          "type": "boolean"
+        },
+        "semi": { "description": "Print semicolons.", "default": true, "type": "boolean" },
+        "singleQuote": {
+          "description": "Use single quotes instead of double quotes.",
+          "default": false,
+          "type": "boolean"
+        },
+        "spaceBeforeFunctionParen": {
+          "description": "Put a space before function parenthesis in all declarations (similar to the corresponding eslint option). (Default is to put a space before function parenthesis for untyped anonymous functions only.)",
+          "default": false,
+          "type": "boolean"
+        },
+        "spaceInParens": {
+          "description": "Print spaces in between parens, WordPress style (similar to the corresponding eslint option). Not recommended in combination with the default `arrowParens: \"always\"` option. Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "spaceUnaryOps": {
+          "description": "Put spaces after unary operator symbols, except in the middle of `!!` (similar to the corresponding eslint option). Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "tabWidth": {
+          "description": "Number of spaces per indentation level.",
+          "default": 2,
+          "type": "integer"
+        },
+        "templateCurlySpacing": {
+          "description": "Put spaces between template curly brackets (similar to the corresponding eslint option). Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "trailingComma": {
+          "description": "Print trailing commas wherever possible when multi-line.",
+          "default": "es5",
+          "oneOf": [
+            {
+              "enum": ["es5"],
+              "description": "Trailing commas where valid in ES5 (objects, arrays, etc.)"
+            },
+            { "enum": ["none"], "description": "No trailing commas." },
+            {
+              "enum": ["all"],
+              "description": "Trailing commas wherever possible (including function arguments)."
+            }
+          ]
+        },
+        "typeAngleBracketSpacing": {
+          "description": "Put spaces between type angle brackets. Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "typeBracketSpacing": {
+          "description": "Print spaces between type brackets. Status: experimental, with limited testing.",
+          "default": false,
+          "type": "boolean"
+        },
+        "typeCurlySpacing": {
+          "description": "Put spaces between type curly braces.",
+          "default": true,
+          "type": "boolean"
+        },
+        "useTabs": {
+          "description": "Indent with tabs instead of spaces.",
+          "default": false,
+          "type": "boolean"
+        },
+        "vueIndentScriptAndStyle": {
+          "description": "Indent script and style tags in Vue files.",
+          "default": false,
+          "type": "boolean"
+        },
+        "yamlBracketSpacing": {
+          "description": "Put spaces between brackets / curly braces for YAML.",
+          "default": true,
+          "type": "boolean"
+        },
+        "yieldStarSpacing": {
+          "description": "Put spaces around the star (`*`) in `yield*` expressions (before and after - similar to the corresponding eslint option). (Default is after only.)",
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    },
+    "overridesDefinition": {
+      "type": "object",
+      "properties": {
+        "overrides": {
+          "type": "array",
+          "description": "Provide a list of patterns to override prettier configuration.",
+          "items": {
+            "type": "object",
+            "required": ["files"],
+            "properties": {
+              "files": {
+                "description": "Include these files in this override.",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "array", "items": { "type": "string" } }
+                ]
+              },
+              "excludeFiles": {
+                "description": "Exclude these files from this override.",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "array", "items": { "type": "string" } }
+                ]
+              },
+              "options": {
+                "type": "object",
+                "description": "The options to apply for this override.",
+                "$ref": "#/definitions/optionsDefinition"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/optionsDefinition" },
+        { "$ref": "#/definitions/overridesDefinition" }
+      ]
+    },
+    { "type": "string" }
+  ]
+}
