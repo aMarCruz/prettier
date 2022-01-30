@@ -1,5 +1,9 @@
 # Changes to Custom Prettier
 
+## \[2.4.0] - 2022-01-29
+
+- Using the 'prettier-version' property of package.json
+
 ## \[2.3.2] - 2021-09-14
 
 - Updated Prettierx to 0.19.0, merged with Prettier 2.3.2
